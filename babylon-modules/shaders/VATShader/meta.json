@@ -1,0 +1,9 @@
+{
+  "name": "VATShader",
+  "category": "shaders",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "ShaderMaterial GLSL ES3: Vertex Animation Texture — đọc position/normal baked trong RawTexture qua gl_VertexID",
+  "created": "2026-05-18",
+  "dependencies": []
+}

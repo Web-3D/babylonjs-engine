@@ -1,0 +1,9 @@
+{
+  "name": "SparkSystem",
+  "category": "effects",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "GPU particle sparks — cone emitter, color/size gradient qua lifetime, optional noise turbulence",
+  "created": "2026-05-18",
+  "dependencies": []
+}

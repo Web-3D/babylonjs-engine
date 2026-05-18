@@ -1,0 +1,9 @@
+{
+  "name": "TriplanarMapping",
+  "category": "shaders",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Node Material với TriPlanarBlock — sample texture theo world-space position/normal, không bị seam khi UV stretch",
+  "created": "2026-05-18",
+  "dependencies": []
+}

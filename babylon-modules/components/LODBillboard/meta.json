@@ -1,0 +1,9 @@
+{
+  "name": "LODBillboard",
+  "category": "components",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Mesh 3D → BILLBOARDMODE_ALL plane LOD khi camera xa — tiết kiệm draw call cho crowd/foliage",
+  "created": "2026-05-18",
+  "dependencies": []
+}

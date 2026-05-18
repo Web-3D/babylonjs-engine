@@ -1,0 +1,9 @@
+{
+  "name": "RuntimeGuard",
+  "category": "utils",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Per-frame performance budget checker — cảnh báo draw calls / triangles vượt ngưỡng và phát hiện memory leak",
+  "created": "2026-05-18",
+  "dependencies": []
+}

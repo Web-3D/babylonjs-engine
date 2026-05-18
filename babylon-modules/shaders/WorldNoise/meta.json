@@ -1,0 +1,9 @@
+{
+  "name": "WorldNoise",
+  "category": "shaders",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Node Material với SimplexPerlin3DBlock — animated world-space noise, lerp giữa 2 màu, không cần gọi update() thủ công",
+  "created": "2026-05-18",
+  "dependencies": []
+}

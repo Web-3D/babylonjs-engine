@@ -1,0 +1,9 @@
+{
+  "name": "CharacterPool",
+  "category": "utils",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Generic object pool cho TransformNode — pre-allocate, acquire/release zero-allocation, utilization warning",
+  "created": "2026-05-18",
+  "dependencies": []
+}

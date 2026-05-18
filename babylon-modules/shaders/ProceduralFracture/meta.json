@@ -1,0 +1,9 @@
+{
+  "name": "ProceduralFracture",
+  "category": "shaders",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "ShaderMaterial GLSL: vertex displacement dọc normal theo value noise 3D — giả lập fracture/crack động",
+  "created": "2026-05-18",
+  "dependencies": []
+}

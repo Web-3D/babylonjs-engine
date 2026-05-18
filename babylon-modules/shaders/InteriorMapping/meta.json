@@ -1,0 +1,9 @@
+{
+  "name": "InteriorMapping",
+  "category": "shaders",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "ShaderMaterial GLSL: ray parallax giả lập phòng nội thất trong cửa sổ building — per-room variation + UV derivative tangent frame",
+  "created": "2026-05-18",
+  "dependencies": []
+}

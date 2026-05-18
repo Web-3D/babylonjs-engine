@@ -1,0 +1,9 @@
+{
+  "name": "RoundedCorners",
+  "category": "shaders",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "ShaderMaterial với UV-space SDF — hình chữ nhật bo góc, anti-aliased, transparent ngoài boundary",
+  "created": "2026-05-18",
+  "dependencies": []
+}

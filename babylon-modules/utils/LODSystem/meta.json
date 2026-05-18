@@ -1,0 +1,9 @@
+{
+  "name": "LODSystem",
+  "category": "utils",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Wrap Mesh.addLODLevel — swap mesh theo khoảng cách camera, không cần gọi update() thủ công",
+  "created": "2026-05-18",
+  "dependencies": []
+}
