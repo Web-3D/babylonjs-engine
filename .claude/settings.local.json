@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Web-3D/**)",
+      "Read(//c/Projects/studio-3D/**)",
+      "Read(//c/Users/nguye/.claude/projects/c--Web-3D-BABYLONJS/memory/**)",
+      "Read(//c/Users/nguye/.claude/projects/c--Web-3D-BABYLONJS/**)",
+      "Read(//c/Users/nguye/.claude/projects/**)"
+    ]
+  }
+}
