@@ -15,10 +15,10 @@ Mục tiêu: rebuild Phase A của THREEJS bằng Babylon.js API để so sánh 
 
 | #   | Module            | Category | Status       | Three.js counterpart | Ghi chú adapt |
 | --- | ----------------- | -------- | ------------ | -------------------- | ------------- |
-| 1   | `RuntimeGuard`    | utils    | ⏳ chưa code | `RuntimeGuard`       | Dùng `scene.drawCalls`, `scene.totalVerticesPerfCounter` thay `renderer.info` |
-| 2   | `TriplanarMapping`| shaders  | ⏳ chưa code | `TriplanarMapping`   | NME: `TextureBlock` + world position/normal input |
-| 3   | `WorldNoise`      | shaders  | ⏳ chưa code | `WorldNoise`         | NME noise block hoặc GLSL implementation |
-| 4   | `RoundedCorners`  | shaders  | ⏳ chưa code | `RoundedCorners`     | UV SDF thuần toán học — port thẳng vào NME/GLSL |
+| 1   | `RuntimeGuard`    | utils    | ✅ unit-pass | `RuntimeGuard`       | Dùng `SceneInstrumentation.drawCallsCounter`, `scene.totalActiveIndicesPerfCounter` |
+| 2   | `TriplanarMapping`| shaders  | ✅ unit-pass | `TriplanarMapping`   | NME: `TriPlanarBlock` built-in + `TransformBlock` world pos/normal |
+| 3   | `WorldNoise`      | shaders  | ✅ unit-pass | `WorldNoise`         | NME: SimplexPerlin3DBlock + RealTime auto-animate (không cần update()) |
+| 4   | `RoundedCorners`  | shaders  | ✅ unit-pass | `RoundedCorners`     | ShaderMaterial GLSL: SDF formula, engine convert WGSL tự động |
 
 ---
 
@@ -26,10 +26,10 @@ Mục tiêu: rebuild Phase A của THREEJS bằng Babylon.js API để so sánh 
 
 | #   | Module               | Category   | Status       | Three.js counterpart |
 | --- | -------------------- | ---------- | ------------ | -------------------- |
-| 1   | `LODSystem`          | utils      | ⏳ chưa code | `LODSystem`          |
-| 2   | `ProceduralFracture` | shaders    | ⏳ chưa code | `ProceduralFracture` |
-| 3   | `InteriorMapping`    | shaders    | ⏳ chưa code | `InteriorMapping`    |
-| 4   | `SparkSystem`        | components | ⏳ chưa code | `SparkSystem`        |
+| 1   | `LODSystem`          | utils      | ✅ unit-pass | `LODSystem`          |
+| 2   | `ProceduralFracture` | shaders    | ✅ unit-pass | `ProceduralFracture` |
+| 3   | `InteriorMapping`    | shaders    | ✅ unit-pass | `InteriorMapping`    |
+| 4   | `SparkSystem`        | effects    | ✅ unit-pass | `SparkSystem`        |
 
 ---
 
@@ -37,19 +37,19 @@ Mục tiêu: rebuild Phase A của THREEJS bằng Babylon.js API để so sánh 
 
 | #   | Module          | Category   | Status       | Three.js counterpart |
 | --- | --------------- | ---------- | ------------ | -------------------- |
-| 1   | `VATShader`     | shaders    | ⏳ chưa code | `VATShader`          |
-| 2   | `LODBillboard`  | components | ⏳ chưa code | `LODBillboard`       |
-| 3   | `CharacterPool` | utils      | ⏳ chưa code | `CharacterPool`      |
+| 1   | `VATShader`     | shaders    | ✅ unit-pass | `VATShader`          |
+| 2   | `LODBillboard`  | components | ✅ unit-pass | `LODBillboard`       |
+| 3   | `CharacterPool` | utils      | ✅ unit-pass | `CharacterPool`      |
 
 ---
 
-## Phase D — Polish & Deploy _(chờ Phase C)_
+## Phase D — Polish & Deploy _(✅ hoàn thành)_
 
-| #   | Module           | Category   | Status       | Three.js counterpart |
-| --- | ---------------- | ---------- | ------------ | -------------------- |
-| 1   | `PostProcessing` | components | ⏳ chưa code | `PostProcessing`     |
-| 2   | `WindAnimation`  | shaders    | ⏳ chưa code | `WindAnimation`      |
-| 3   | `DayNightCycle`  | utils      | ⏳ chưa code | `DayNightCycle`      |
+| #   | Module           | Category   | Status       | Three.js counterpart | Ghi chú adapt |
+| --- | ---------------- | ---------- | ------------ | -------------------- | ------------- |
+| 1   | `PostProcessing` | components | ✅ unit-pass | `PostProcessing`     | DefaultRenderingPipeline: auto-apply qua scene.render(), không cần pp.render() |
+| 2   | `WindAnimation`  | shaders    | ✅ unit-pass | `WindAnimation`      | TSL triNoise3D → GLSL value noise 3D; object-space + worldViewProjection |
+| 3   | `DayNightCycle`  | utils      | ✅ unit-pass | `DayNightCycle`      | AmbientLight → HemisphericLight; light.direction thay position; Color3.Lerp() |
 
 ---
 
@@ -128,5 +128,10 @@ Babylon.js `PBRMaterial` có `subSurface.isScatteringEnabled` built-in — khôn
 | Ngày       | Thay đổi                                                  |
 | ---------- | --------------------------------------------------------- |
 | 2026-05-18 | Phase A: bỏ `GlobalUniforms` (TSL-specific), thêm `RuntimeGuard` |
+| 2026-05-18 | `RuntimeGuard` unit-pass ✅ — `SceneInstrumentation` + `totalActiveIndicesPerfCounter` |
+| 2026-05-18 | **Phase A ✅ hoàn thành** — 4/4 modules: RuntimeGuard, TriplanarMapping, WorldNoise, RoundedCorners |
+| 2026-05-18 | **Phase B ✅ hoàn thành** — 4/4 modules: LODSystem, ProceduralFracture, InteriorMapping, SparkSystem |
+| 2026-05-18 | **Phase C ✅ hoàn thành** — 3/3 modules: VATShader (GLSL ES3 + gl_VertexID), LODBillboard (BILLBOARDMODE_ALL), CharacterPool (TransformNode pool) |
+| 2026-05-18 | **Phase D ✅ hoàn thành** — 3/3 modules: PostProcessing (DefaultRenderingPipeline), WindAnimation (GLSL noise3D object-space), DayNightCycle (DirectionalLight + HemisphericLight) |
 | 2026-05-17 | Thêm Phase E — High Fidelity Rendering (feasibility study) |
 | 2026-05-12 | Tạo file — mirror structure từ `THREEJS/ROADMAP.md`       |

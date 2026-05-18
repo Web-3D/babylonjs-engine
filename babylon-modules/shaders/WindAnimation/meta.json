@@ -1,0 +1,9 @@
+{
+  "name": "WindAnimation",
+  "category": "shaders",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "ShaderMaterial GLSL: vertex displacement XZ giả lập gió dùng value noise 3D object-space",
+  "created": "2026-05-18",
+  "dependencies": []
+}

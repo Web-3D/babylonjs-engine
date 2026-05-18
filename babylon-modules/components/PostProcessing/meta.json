@@ -1,0 +1,9 @@
+{
+  "name": "PostProcessing",
+  "category": "components",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Post-processing pipeline: bloom via DefaultRenderingPipeline, auto-applied qua scene.render()",
+  "created": "2026-05-18",
+  "dependencies": []
+}

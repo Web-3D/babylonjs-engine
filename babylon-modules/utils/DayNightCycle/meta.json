@@ -1,0 +1,9 @@
+{
+  "name": "DayNightCycle",
+  "category": "utils",
+  "babylon-version-verified": "8.56.2",
+  "status": "✅",
+  "description": "Chu kỳ ngày-đêm: drive DirectionalLight + HemisphericLight theo sun arc. Port từ THREEJS",
+  "created": "2026-05-18",
+  "dependencies": []
+}
