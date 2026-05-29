@@ -106,11 +106,13 @@ babylon-modules/utils/RuntimeGuard/
 
 ---
 
-## Workflow 2 AI
+## Workflow import module (Claude solo)
 
-| AI | Vai trò |
+> Gemini rời 2026-05-29 — Claude đảm nhận cả tìm/copy lẫn tích hợp. Không còn handoff qua `SUMMARY.md`.
+
+| Giai đoạn | Việc |
 |---|---|
-| **Claude Code** | Build module trong `babylon-modules/`, validate, tích hợp `00-Babylon/` |
-| **Gemini** | Tìm/copy module từ `babylon-modules/` → project, viết `SUMMARY.md` |
+| Build | Build module trong `babylon-modules/`, validate (unit-pass) |
+| Import | Tìm/copy module → `00-Babylon/src/imported/`, tích hợp vào scene, update `.module-lock.json` |
 
 Không sửa file trong `src/imported/[name]/` — giữ nguyên để diff.
